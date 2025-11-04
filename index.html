@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторні роботи №7-10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Лабораторні роботи</h1>
+        </header>
+        
+        <div class="content">
+            
+            <div class="labs-grid">
+                <div class="lab-card" onclick="openLab('lr7')">
+                    <div class="lab-number">Лабораторна №7</div>
+                    <div class="lab-info">
+                        <div class="lab-title">Перша лабораторна</div>
+                        <div class="lab-desc">Магічна куля</div>
+                        <a href="#" class="btn">Перейти</a>
+                    </div>
+                </div>
+                
+                <div class="lab-card" onclick="openLab('lr8')">
+                    <div class="lab-number">Лабораторна №8</div>
+                    <div class="lab-info">
+                        <div class="lab-title">Друга лабораторна</div>
+                        <div class="lab-desc">Числа</div>
+                        <a href="#" class="btn">Перейти</a>
+                    </div>
+                </div>
+                
+                <div class="lab-card" onclick="openLab('lr9')">
+                    <div class="lab-number">Лабораторна №9</div>
+                    <div class="lab-info">
+                        <div class="lab-title">Третя лабораторна</div>
+                        <div class="lab-desc">Карти</div>
+                        <a href="#" class="btn">Перейти</a>
+                    </div>
+                </div>
+                
+                <div class="lab-card" onclick="openLab('lr10')">
+                    <div class="lab-number">Лабораторна №10</div>
+                    <div class="lab-info">
+                        <div class="lab-title">Четверта лабораторна</div>
+                        <div class="lab-desc">Однорукий бандит</div>
+                        <a href="#" class="btn">Перейти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLab(labNumber) {
+            const labPaths = {
+                'lr7': './lr7/index.html',
+                'lr8': './lr8/index.html',
+                'lr9': './lr9/index.html',
+                'lr10': './lr10/index.html'
+            };
+            window.location.href = labPaths[labNumber];
+        }
+        
+        document.querySelectorAll('.btn').forEach((button, index) => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const labNumbers = ['lr7', 'lr8', 'lr9', 'lr10'];
+                openLab(labNumbers[index]);
+            });
+        });
+    </script>
+</body>
+</html>
